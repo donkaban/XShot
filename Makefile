@@ -8,7 +8,7 @@ HEADERS =
 # -------------------------------------------------------------------------------------------
 
 CXX          = g++
-CXX_FLAGS    = -c -Wall -Wextra -std=c++11  -O3 
+CXX_FLAGS    = -c -Wall -Wextra -std=c++0x  -O3 
 LINK_FLAGS   = -lX11
 
 

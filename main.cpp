@@ -20,11 +20,12 @@ void savePNG(XImage *image, int w, int h, const std::string & filename)
         for (auto x = 0; x < w ; x++)
         {    
             auto pixel = XGetPixel(image,x,y);
-            raw_image.push_back(pixel );
-            raw_image.push_back(pixel >> 8);
             raw_image.push_back(pixel >> 16);
+            raw_image.push_back(pixel >> 8);
+            raw_image.push_back(pixel );
+       
         }    
-    stbi_write_png("test.png",w,h, 3, &raw_image[0], w * 3);
+    stbi_write_png(filename.c_str(),w,h, 3, &raw_image[0], w * 3);
 }
 
 int main(int argc, char **argv)
